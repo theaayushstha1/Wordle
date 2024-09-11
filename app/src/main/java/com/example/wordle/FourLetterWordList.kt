@@ -1,11 +1,16 @@
-package com.example.wordle  // Ensure this package matches your project package
+package com.example.wordle
 
 object FourLetterWordList {
-    private val fourLetterWords = listOf(
-        "GAME", "WORD", "PLAY", "CODE", "JAVA", "KOTL", "STAY", "LIST", "BEST", "GOOD"
-    )
+    private val regularWords = listOf("GAME", "WORD", "PLAY", "CODE")
+    private val sportWords = listOf("BALL", "GOAL", "RACE", "SWIM")
+    private val techWords = listOf("JAVA", "KOTL", "HTML", "CODE")
 
-    fun getRandomFourLetterWord(): String {
-        return fourLetterWords.random()
+    // Function to get random word from the selected category
+    fun getRandomFourLetterWord(category: String): String {
+        return when (category) {
+            "sports" -> sportWords.random()
+            "tech" -> techWords.random()
+            else -> regularWords.random()
+        }
     }
 }
