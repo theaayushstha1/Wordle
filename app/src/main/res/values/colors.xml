@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="correct_position">#00FF00</color> <!-- Green for correct letter in correct position -->
+    <color name="correct_letter">#FFFF00</color> <!-- Yellow for correct letter in wrong position -->
+    <color name="incorrect_letter">#FF0000</color> <!-- Red for incorrect letter -->
+    <color name="defaultBackground">#FFFFFF</color> <!-- Default background color -->
 </resources>

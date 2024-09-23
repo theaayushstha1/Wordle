@@ -1,16 +1,19 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/mainLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/defaultBackground">
 
-    <!-- EditText for user input -->
+    <!-- Input field for the guess -->
     <EditText
         android:id="@+id/etGuessInput"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:hint="@string/guess_hint"
+        android:hint="Enter your guess"
         android:inputType="text"
         android:autofillHints="username"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,36 +21,48 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="16dp"/>
 
-
+    <!-- Submit button -->
     <Button
         android:id="@+id/btnSubmitGuess"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/submit_button"
+        android:text="Submit"
         app:layout_constraintTop_toBottomOf="@id/etGuessInput"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
 
+    <!-- Results TextView -->
     <TextView
         android:id="@+id/tvResults"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/results_text"
+        android:text="Results will appear here"
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/btnSubmitGuess"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="16dp"/>
+
+    <!-- Streak Display -->
+    <TextView
+        android:id="@+id/streakTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Streak: 0"
+        app:layout_constraintTop_toBottomOf="@id/tvResults"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp" />
+
+    <!-- Reset button -->
     <Button
         android:id="@+id/btnReset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Reset"
-        app:layout_constraintTop_toBottomOf="@id/btnSubmitGuess"
+        app:layout_constraintTop_toBottomOf="@id/streakTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"
-        android:visibility="gone" /> <!-- Start with the reset button hidden -->
-
+        android:visibility="gone" />
 </androidx.constraintlayout.widget.ConstraintLayout>
